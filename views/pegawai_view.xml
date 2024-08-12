@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- rokilibrary.pegawai tree view -->
+    <record id="rokilibrary_pegawai_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Pegawai</field>
+        <field name="model">rokilibrary.pegawai</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="tempat_lahir"/>
+                <field name="tgl_lahir"/>
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- rokilibrary.pegawai form view -->
+    <record id="rokilibrary_pegawai_view_form" model="ir.ui.view">
+        <field name="name">Form Pegawai</field>
+        <field name="model">rokilibrary.pegawai</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="tempat_lahir"/>
+                        <field name="tgl_lahir"/>
+                        <field name="gender"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- rokilibrary.pegawai action window -->
+    <record id="rokilibrary_pegawai_action" model="ir.actions.act_window">
+        <field name="name">Daftar Pegawai</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">rokilibrary.pegawai</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="rokilibrary_pegawai_menu_act"
+              name="Daftar Pegawai"
+              parent="rokilibrary_pegawai_menu_categ"
+              action="rokilibrary_pegawai_action"
+              sequence="30"/>
+
+</odoo>
